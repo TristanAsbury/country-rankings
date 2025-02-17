@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --font-base: 'Synonym', sans-serif;
+  --font-header: 'Amulya', sans-serif;
+}
+
+body, html {
+  min-width: 100svw;
+  min-height: 100svh;
+  font-family: var(--font-base);
+  color: var(--color-gray-200);
+}
+
+#root {
+  background-color: var(--color-neutral-800);
+}

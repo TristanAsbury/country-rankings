@@ -6,12 +6,67 @@
 }
 
 body, html {
-  min-width: 100svw;
-  min-height: 100svh;
+  width: 100%;
+  height: 100vh;
   font-family: var(--font-base);
   color: var(--color-gray-200);
 }
 
 #root {
   background-color: var(--color-neutral-800);
+}
+
+/* TEXT FIELDS */
+.react-aria-Input {
+  @apply bg-zinc-800 border-2 border-zinc-700 p-2 rounded-xl min-w-xs
+}
+
+.react-aria-Input {
+  @apply outline-none
+}
+
+/* SELECT STUFF */
+.react-aria-Select {
+  @apply flex flex-col w-full
+}
+
+.react-aria-Select * {
+  @apply outline-none
+}
+
+.react-aria-Button {
+  @apply bg-zinc-800 border-2 border-zinc-700 rounded-xl p-2 min-w-full text-left cursor-pointer
+}
+
+.react-aria-Popover[data-trigger=Select] {
+  @apply w-[var(--trigger-width)]
+}
+
+.react-aria-ListBox {
+  @apply bg-zinc-800 border-2 border-zinc-700 rounded-xl w-full
+}
+
+.react-aria-ListBoxItem {
+  @apply p-2 outline-none transition-all cursor-pointer w-full
+}
+
+.react-aria-ListBoxItem:hover {
+  @apply bg-zinc-700
+}
+
+/* TAG GROUP STUFF */
+.react-aria-TagGroup * {
+  @apply outline-none
+}
+
+.react-aria-TagList {
+  @apply flex flex-row flex-wrap gap-2
+}
+
+.react-aria-Tag {
+  @apply p-2 rounded-xl cursor-pointer transition-all
+}
+
+.react-aria-Tag[data-selected] {
+  @apply bg-zinc-700
 }

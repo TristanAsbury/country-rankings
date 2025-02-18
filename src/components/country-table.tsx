@@ -1,16 +1,19 @@
 import { Country } from "../types/country"
 
 export const CountryTable = ({countries}: {countries: Country[]}) => {
-    console.log(countries);
+    const addCommas = (num: number): string => {
+        return num.toLocaleString();
+    };
+
     return (
-        <table className="w-full">
+        <table className="w-full overflow-scroll">
             <thead className="">
-                <tr className="text-zinc-500 border-b border-zinc-500">
-                    <th className="text-left w-sm py-4">Flag</th>
-                    <th className="text-left w-sm py-4">Name</th>
-                    <th className="text-left w-sm py-4">Population</th>
-                    <th className="text-left w-sm py-4">Area (km2)</th>
-                    <th className="text-left w-sm py-4">Region</th>
+                <tr className="text-zinc-400 border-b border-zinc-500">
+                    <th className="text-left w-sm pb-4 font-medium text-sm">Flag</th>
+                    <th className="text-left w-sm pb-4 font-medium text-sm">Name</th>
+                    <th className="text-left w-sm pb-4 font-medium text-sm">Population</th>
+                    <th className="text-left w-sm pb-4 font-medium text-sm">Area (km2)</th>
+                    <th className="text-left w-sm pb-4 font-medium text-sm">Region</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,12 +36,12 @@ export const CountryTable = ({countries}: {countries: Country[]}) => {
 
                             {/* Population */}
                             <td>
-                                {c.population}
+                                {addCommas(c.population)}
                             </td>
 
                             {/* Area */}
                             <td>
-                                {c.area}
+                                {addCommas(c.area)}
                             </td>
 
                             {/* Region */}

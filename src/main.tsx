@@ -7,12 +7,14 @@ import { CountryDetailsPage } from './pages/country-details-page'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<CountryRankingPage/>}></Route>
-        <Route path="/:id" element={<CountryDetailsPage/>}></Route>
-      </Routes>
-    
-    </BrowserRouter>
+    <main className="w-full h-full bg-zinc-800 p-16">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<CountryRankingPage/>}></Route>
+          <Route path="/:id" element={<CountryDetailsPage/>}></Route>
+        </Routes>
+      </BrowserRouter>
+    </main>
+
   </StrictMode>,
 )

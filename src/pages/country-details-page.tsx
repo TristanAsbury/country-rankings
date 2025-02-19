@@ -22,15 +22,16 @@ export const CountryDetailsPage = () => {
     }, [countryName])
 
     useEffect(() => {
-        const nbors: Country[] = [];
-        country?.borders?.forEach(border => {
-            api.get(`/alpha/${border}`).then(b => {
-                const nbor = b.data[0];
-                nbors.push(nbor);
-                setNeighbors(nbors);
-            });
+        if (!country?.borders?.length) return;
+    
+        Promise.all(
+            country.borders.map(border => api.get(`/alpha/${border}`).then(res => res.data[0]))
+        ).then(neighbors => {
+            setNeighbors(neighbors);
+        }).catch(error => {
+            console.error("Error fetching neighbors:", error);
         });
-    }, [country])
+    }, [country]);
 
     return (
         <div className="bg-zinc-800 border border-zinc-700 max-w-2xl m-auto rounded-xl shadow-xl">

@@ -17,25 +17,39 @@ body, html {
 }
 
 /* TEXT FIELDS */
-.react-aria-Input {
-  @apply bg-zinc-800 border-2 border-zinc-700 p-2 rounded-xl min-w-xs
+.react-aria-SearchField {
+  @apply bg-zinc-700 px-2 rounded-xl min-w-xs flex flex-row
+}
+
+.react-aria-SearchField > .react-aria-Button {
+  @apply outline-none border-none bg-zinc-700
+}
+
+.react-aria-SearchField:focus-within {
+  @apply outline-2 outline-zinc-600
 }
 
 .react-aria-Input {
-  @apply outline-none
+  @apply bg-none border-none outline-none w-full
 }
+
+.react-aria-Input::-webkit-search-cancel-button {
+  @apply hidden
+}
+
+
 
 /* SELECT STUFF */
 .react-aria-Select {
   @apply flex flex-col w-full
 }
 
-.react-aria-Select * {
-  @apply outline-none
+.react-aria-Button {
+  @apply bg-zinc-800 border-2 border-zinc-700 rounded-xl p-2 text-left cursor-pointer
 }
 
-.react-aria-Button {
-  @apply bg-zinc-800 border-2 border-zinc-700 rounded-xl p-2 min-w-full text-left cursor-pointer
+.react-aria-Button[data-focused] {
+  @apply outline-2 outline-zinc-600
 }
 
 .react-aria-Popover[data-trigger=Select] {
@@ -69,4 +83,22 @@ body, html {
 
 .react-aria-Tag[data-selected] {
   @apply bg-zinc-700
+}
+
+
+/* CHECKBOX */
+.react-aria-Checkbox[data-focused] > .checkbox {
+  @apply outline-2 outline-zinc-600
+}
+
+.react-aria-Checkbox > .checkbox {
+  @apply border-2 border-zinc-700 rounded-lg transition-all text-transparent
+}
+
+.react-aria-Checkbox[data-selected] > .checkbox {
+  @apply border-indigo-400 bg-indigo-400 text-zinc-200
+}
+
+.react-aria-Checkbox {
+  @apply flex flex-row gap-2
 }

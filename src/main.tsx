@@ -7,13 +7,16 @@ import { CountryDetailsPage } from './pages/country-details-page'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <main className="w-full h-screen bg-zinc-800 p-32">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<CountryRankingPage/>}></Route>
-          <Route path="/:id" element={<CountryDetailsPage/>}></Route>
-        </Routes>
-      </BrowserRouter>
+    <main className="relative w-full h-screen bg-zinc-800">
+      <div className="w-full h-full p-16 z-10">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<CountryRankingPage/>}></Route>
+            <Route path="/country/:countryName" element={<CountryDetailsPage/>}></Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
+
     </main>
 
   </StrictMode>,

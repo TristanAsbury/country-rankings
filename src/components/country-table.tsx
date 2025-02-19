@@ -1,12 +1,19 @@
+import { useNavigate } from "react-router";
 import { Country } from "../types/country"
 
 export const CountryTable = ({countries}: {countries: Country[]}) => {
+    const navigate = useNavigate();
+
     const addCommas = (num: number): string => {
         return num.toLocaleString();
     };
 
+    const goToDetails = (country: Country) => {
+        navigate(`/country/${country.name.common}`);
+    }
+
     return (
-        <table className="w-full h-full">
+        <table className="w-full">
             <thead className="">
                 <tr className="sticky top-0 text-zinc-400 border-b border-zinc-500 bg-zinc-800">
                     <th className="text-left w-sm pb-4 font-medium text-sm">Flag</th>
@@ -20,7 +27,10 @@ export const CountryTable = ({countries}: {countries: Country[]}) => {
             {
                 countries.map((c: Country, idx) => {
                     return (
-                        <tr key={idx} className="font-medium hover:bg-zinc-700 transition-all duration-50 cursor-pointer">
+                        <tr 
+                        onClick={() => goToDetails(c)}
+                        key={idx} 
+                        className="font-medium hover:bg-zinc-700 transition-all duration-50 cursor-pointer">
                             {/* FLAG */}
                             <td className="py-2 px-2">
                                 <img className="w-12 rounded-md object-cover aspect-3/2"

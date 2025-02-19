@@ -4,5 +4,5 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
-  base: '/country-rankings'
+  base: '/country-rankings/'
 })

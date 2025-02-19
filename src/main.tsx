@@ -9,7 +9,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <main className="relative w-full h-svh text-xs lg:text-base">
       <div className="w-full h-full z-10 md:pt-52 md:px-16">
-        <BrowserRouter>
+        <BrowserRouter basename='/country-rankings'>
           <Routes>
             <Route path="/" element={<CountryRankingPage/>}></Route>
             <Route path="/country/:countryName" element={<CountryDetailsPage/>}></Route>

@@ -20,7 +20,7 @@ export const CountryTable = ({countries}: {countries: Country[]}) => {
                     <th className="text-left w-sm pb-4 font-medium text-sm">Name</th>
                     <th className="text-left w-sm pb-4 font-medium text-sm">Population</th>
                     <th className="text-left w-sm pb-4 font-medium text-sm">Area (km2)</th>
-                    <th className="text-left w-sm pb-4 font-medium text-sm">Region</th>
+                    <th className="text-left w-sm pb-4 font-medium text-sm hidden xl:block">Region</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,8 +32,8 @@ export const CountryTable = ({countries}: {countries: Country[]}) => {
                         key={idx} 
                         className="font-medium hover:bg-zinc-700 transition-all duration-50 cursor-pointer">
                             {/* FLAG */}
-                            <td className="py-2 px-2">
-                                <img className="w-12 rounded-md object-cover aspect-3/2"
+                            <td className="py-2">
+                                <img className="w-12 rounded-sm object-cover aspect-3/2"
                                     src={c.flags.png}
                                     alt={"Flag of " + c.name}/>
                             </td>
@@ -54,7 +54,7 @@ export const CountryTable = ({countries}: {countries: Country[]}) => {
                             </td>
 
                             {/* Region */}
-                            <td>
+                            <td className="hidden xl:block">
                                 {c.region}
                             </td>
                         </tr>

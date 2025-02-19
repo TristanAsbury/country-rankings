@@ -67,7 +67,7 @@ export const CountryRankingPage = () => {
         <main className="h-full flex flex-col p-8 rounded-xl bg-zinc-800 border border-zinc-700">
             {/* Found x countries and search bar */}
             <div className="flex flex-col md:flex-row justify-between items-center">
-                <p className="font-medium text-lg">Found {countries.length} countries</p>
+                <p className="font-medium text-lg text-left w-full">Found {filteredCountries.length} countries</p>
                 <SearchField aria-label="Search" onChange={setSearchTerm}>
                     <Input placeholder="Search by Name, Region, Subregion"/>
                     <Button>
@@ -77,9 +77,9 @@ export const CountryRankingPage = () => {
             </div>
 
             {/* Search + Table Wrapper */}
-            <div className="flex-1 flex flex-row overflow-hidden mt-4">
+            <div className="flex-1 flex flex-col md:flex-row overflow-hidden mt-4 justify-between">
                 {/* Search Properties */}
-                <div className="min-w-xs flex flex-col gap-8 mr-4 p-2">
+                <div className="min-w-fit flex flex-col gap-8 md:p-2 md:mr-2">
                     <div className="flex flex-col gap-2">
                         <Select 
                             placeholder="Select one" 

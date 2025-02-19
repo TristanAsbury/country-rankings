@@ -7,8 +7,8 @@ import { CountryDetailsPage } from './pages/country-details-page'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <main className="relative w-full h-screen bg-zinc-800">
-      <div className="w-full h-full p-16 z-10">
+    <main className="relative w-full h-svh text-xs lg:text-base">
+      <div className="w-full h-full z-10 md:pt-52 md:px-16">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<CountryRankingPage/>}></Route>

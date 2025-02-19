@@ -7,18 +7,19 @@
 
 body, html {
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   font-family: var(--font-base);
   color: var(--color-gray-200);
+  background-color: var(--color-zinc-800);
 }
 
 #root {
-  background-color: var(--color-neutral-800);
+  background-color: var(--color-zinc-800);
 }
 
 /* TEXT FIELDS */
 .react-aria-SearchField {
-  @apply bg-zinc-700 px-2 rounded-xl min-w-xs flex flex-row
+  @apply bg-zinc-700 px-2 rounded-xl min-w-fit flex flex-row w-full md:w-fit
 }
 
 .react-aria-SearchField > .react-aria-Button {
@@ -100,5 +101,5 @@ body, html {
 }
 
 .react-aria-Checkbox {
-  @apply flex flex-row gap-2
+  @apply flex flex-row gap-2 items-center
 }

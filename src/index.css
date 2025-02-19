@@ -11,6 +11,7 @@ body, html {
   font-family: var(--font-base);
   color: var(--color-gray-200);
   background-color: var(--color-zinc-800);
+  color-scheme: dark;
 }
 
 #root {
